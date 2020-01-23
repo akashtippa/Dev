@@ -4,7 +4,6 @@ services:
 
 before_install:
   - docker build -t akash/react-test -f ./client/Dockerfile.dev ./client
-  
 
 script:
   - docker run akash/react-test npm test -- --coverage

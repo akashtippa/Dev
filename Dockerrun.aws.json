@@ -1,0 +1,37 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinition": [
+    {
+      "name": "client",
+      "image": "akash/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "akash/multi-server",
+      "hostname": "api",
+      "essential":false
+    },
+    {
+      "name": "worker",
+      "image": "akash/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "akash/multi-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+	{
+          "hostPort":80,
+	  "containerPort":80
+	}
+      ],
+      "links": ["client", "server"]
+     }
+    ]
+   }
+

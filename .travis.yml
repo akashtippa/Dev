@@ -20,6 +20,19 @@ after_success:
   - docker push akash/multi-nginx
   - docker push akash/multi-service
   - docker push akash/multi-worker
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: test
+  env: Test-env-1
+  bucket_name: elasticbeanstalk-ap-south-1-243020057751
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secrete_access_key: $AWS_SECRET_KEY
+  
  
 
     

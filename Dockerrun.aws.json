@@ -3,14 +3,14 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "akash/multi-client",
+      "image": "akasht/multi-client",
       "hostname": "client",
       "essential": false,
       "memory": 128
     },
     {
       "name": "server",
-      "image": "akash/multi-server",
+      "image": "akasht/multi-server",
       "hostname": "api",
       "essential":false,
       "memory": 128
@@ -18,15 +18,14 @@
     },
     {
       "name": "worker",
-      "image": "akash/multi-worker",
+      "image": "akasht/multi-worker",
       "hostname": "worker",
       "essential": false,
       "memory": 128
-
     },
     {
       "name": "nginx",
-      "image": "akash/multi-nginx",
+      "image": "akasht/multi-nginx",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [

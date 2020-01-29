@@ -8,17 +8,17 @@ before_install:
 script:
   - docker run akash/react-test npm test -- --coverage
 after_success:
-  - docker build -t akash/multi-client ./client
-  - docker build -t akash/multi-nginx ./nginx
-  - docker build -t akash/multi-server ./server
-  - docker build -t akash/multi-worker ./worker
+ - docker build -t akasht/akash:multi-client ./client
+ - docker build -t akasht/akash:multi-nginx ./nginx
+ - docker build -t akasht/akash:multi-server ./server
+ - docker build -t akasht/akash:multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push akasht/akash:ulti-client
-  - docker push akasht/akash:multi-nginx
-  - docker push akasht/akash:multi-service
-  - docker push akasht/akash:multi-worker
+  - docker push akasht/multi-client
+  - docker push akasht/multi-nginx
+  - docker push akasht/multi-service
+  - docker push akasht/multi-worker
 deploy:
   edge: true
   provider: elasticbeanstalk

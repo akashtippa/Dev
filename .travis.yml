@@ -22,8 +22,8 @@ after_success:
 
 deploy:
   edge: true
-  script: bash docker_push
   provider: elasticbeanstalk
+  script: bash docker_push
   region: ap-south-1
   app:  multi-docker
   env: MultiDocker-env

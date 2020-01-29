@@ -23,6 +23,7 @@ after_success:
 deploy:
   edge: true
   provider: elasticbeanstalk
+  script: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" && make push-image
   region: ap-south-1
   app:  multi-docker
   env: MultiDocker-env

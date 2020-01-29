@@ -15,10 +15,10 @@ after_success:
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push akasht/multi-client
-  - docker push akasht/multi-nginx
-  - docker push akasht/multi-service
-  - docker push akasht/multi-worker
+  - docker push akasht/akash:ulti-client
+  - docker push akasht/akash:multi-nginx
+  - docker push akasht/akash:multi-service
+  - docker push akasht/akash:multi-worker
 deploy:
   edge: true
   provider: elasticbeanstalk

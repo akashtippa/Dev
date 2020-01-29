@@ -14,22 +14,23 @@ after_success:
   - docker build -t akasht/akash:multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    # Take those images and push them to docker hub
+   # Take those images and push them to docker hub
   - docker push akasht/akash:multi-client
   - docker push akasht/akash:multi-nginx
   - docker push akasht/akash:multi-service
   - docker push akasht/akash:multi-worker
-  deploy:
-    edge: true
-    provider: elasticbeanstalk
-    region: ap-south-1
-    app:  multi-docker
-    env: MultiDocker-env
-    bucket_name: elasticbeanstalk-ap-south-1-243020057751
-    bucket_path: docker-multi
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app:  multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-ap-south-1-243020057751
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
 
 

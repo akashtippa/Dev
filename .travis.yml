@@ -17,7 +17,7 @@ after_success:
    # Take those images and push them to docker hub
   - docker push akasht/akash:multi-client
   - docker push akasht/akash:multi-nginx
-  - docker push akasht/akash:multi-service
+  - docker push akasht/akash:multi-server
   - docker push akasht/akash:multi-worker
 
 deploy:

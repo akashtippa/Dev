@@ -19,6 +19,7 @@ after_success:
   - docker push akasht/akash:multi-nginx
   - docker push akasht/akash:multi-server
   - docker push akasht/akash:multi-worker
+
 deploy:
   edge: true
   provider: elasticbeanstalk

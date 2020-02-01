@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t akash/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t akasht/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run akash/react-test npm test -- --coverage
+  - docker run akasht/react-test npm test -- --coverage
 after_success:
   - docker build -t akasht/multi-client ./client
   - docker build -t akasht/multi-nginx ./nginx
